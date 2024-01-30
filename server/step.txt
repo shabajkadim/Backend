@@ -1,0 +1,6 @@
+1.npm init -y -package.json
+2.create index.js file
+3.inside package.json add new script
+4.install nodemon and express
+5.add type:module in package.json file
+6.import and configure express
