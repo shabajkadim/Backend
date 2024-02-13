@@ -19,6 +19,7 @@ export const Register= async (req,res)=>{
         if(password != confirmPassword){
             return res.send("password and confirmpassword are not match")
         }
+        
     
        const hashPassword=await bcrypt.hashSync(password,10)
     //    console.log(hashPassword)
