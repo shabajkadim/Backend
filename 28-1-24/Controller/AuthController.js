@@ -4,8 +4,8 @@ import jwt from 'jsonwebtoken'
 
 export const Register= async (req,res)=>{
     try{
-        // const {name,email,password,confirmPassword}=req.body.userData;
-        const {name,email,password,confirmPassword}=req.body;
+        const {name,email,password,confirmPassword}=req.body.userData;
+        // const {name,email,password,confirmPassword}=req.body;
 
         if(!name || !email || !password || !confirmPassword){
             return res.send("All feild are required")
@@ -17,7 +17,7 @@ export const Register= async (req,res)=>{
             return res.send("email is exist")
         }
         if(password != confirmPassword){
-            return res.send("password and confirmpassword are not match")
+            return res.send("password and confirmpassword are not match..!")
         }
     
        const hashPassword=await bcrypt.hashSync(password,10)
@@ -38,8 +38,8 @@ export const Register= async (req,res)=>{
 
 export const Login=async (req,res)=>{
     try{
-        // const {email,password}=req.body.loginData;
-        const {email,password}=req.body;
+        const {email,password}=req.body.loginData;
+        // const {email,password}=req.body;
 
         if(!email || !password){
             return res.status(401).json({success:false ,message:"email and password both are required"})
